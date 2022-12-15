@@ -7,14 +7,13 @@ with open("phonebook_raw.csv", encoding='utf=8') as f:
   rows = csv.reader(f, delimiter=",")
   contacts_list = list(rows)
 
-
 # TODO 1: выполните пункты 1-3 ДЗ
 # ваш код
 
 fi_dict = {}
 new_dict = []
 for contact_list in contacts_list:
-    fio = ' '.join(contact_list[:3]).split(' ')
+    fio = ' '.join(contact_list[:1]).split(' ')
     contact_list[:len(fio)] = fio
     name_surname = ' '.join(contact_list[:2])
     if fi_dict.get(name_surname):
@@ -33,6 +32,7 @@ for key, val in fi_dict.items():
     val[5] = re.sub(phone,good_phone,val[5])
     new_dict.append(val)
 
+# print(new_dict)
 
 
 # new = re.sub(phone,good_phone,new[5])
