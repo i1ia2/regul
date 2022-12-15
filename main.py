@@ -13,7 +13,7 @@ with open("phonebook_raw.csv", encoding='utf=8') as f:
 fi_dict = {}
 new_dict = []
 for contact_list in contacts_list:
-    fio = ' '.join(contact_list[:1]).split(' ')
+    fio = ' '.join(contact_list[:3]).split()
     contact_list[:len(fio)] = fio
     name_surname = ' '.join(contact_list[:2])
     if fi_dict.get(name_surname):
